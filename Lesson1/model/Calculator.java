@@ -24,7 +24,7 @@ public class Calculator {
     }
 
     public void divide() {
-        result = lastN / lastN2;
+        result = lastN / lastN2; 
     }
 
     public double getResult() {
