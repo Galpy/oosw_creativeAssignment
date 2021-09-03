@@ -13,6 +13,19 @@ public class CalculatorTest {
 
         assert c1.getResult() == 3;
         System.out.println(n);
+
+        c1.multiply();
+        assert c1.getResult() == 1 * 2;
+        c1.enter(2);
+        c1.enter(3);
+        c1.multiply();
+        assert c1.getResult() == 2 * 3;
+
+        c1.subtract();
+        assert c1.getResult() == 3 - 2;
+
+        c1.divide();
+        assert c1.getResult() == 3.0 / 2;
     }
 }
  
