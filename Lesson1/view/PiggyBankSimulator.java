@@ -82,9 +82,6 @@ public class PiggyBankSimulator {
 
     }
 
-    /* public JFrame getWindow() {
-        return window;
-    } */
 
     public PiggyBank getPiggyBank() {
         return piggyBank;

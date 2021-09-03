@@ -27,7 +27,6 @@ public class PBStatsListener implements ActionListener{
         }
         String existingMessage = panel.getDisplay().getText();
         existingMessage += "\nCoin Stats\n";
-        String message = "";
         panel.getDisplay().setText(existingMessage + "Nickels: " + nickels + "\nDimes: " + dimes + "\nQuarters: " + quarters);
     }
     
