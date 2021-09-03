@@ -43,6 +43,10 @@ public class MenuScreen {
 
         piggybankButton.addActionListener( e -> {
             window.getContentPane().removeAll();
+            var piggyBank = new PiggyBankSimulator(window);
+            piggyBank.init();
+            window.pack();
+            window.revalidate();
         }
         );
     }
