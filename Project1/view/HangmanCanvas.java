@@ -42,14 +42,16 @@ public class HangmanCanvas extends JPanel{
                 g2.setColor(Color.red);
                 Font currentFont = new Font("Courier New", Font.BOLD, 30);
                 g2.setFont(currentFont);
-                g2.drawString("Game Over", 150, 160);
+                g2.drawString("YOU LOST !!!", 150, 160);
+                g2.setColor(Color.blue);
+                g2.drawString("Press <New> to Start", 100, 240);
             }
             g2.setColor(Color.blue);
             Font currentFont = new Font("Courier New", Font.BOLD, 30);
             g2.setFont(currentFont);
             // draw balls
             g2.drawString("Lives: " + health, 200, 50);
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < health; i++) {
                 if (i < health)
                     g2.fillRect(i * 80 + 70, 100, 50, 50);
                 else
@@ -58,7 +60,7 @@ public class HangmanCanvas extends JPanel{
         }
     }
     
-    public void setHealthCount(int health) {
-        this.health = health;
+    public void setHealthCount(int currHealth) {
+        this.health = currHealth;
     }
 }

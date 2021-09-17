@@ -23,7 +23,7 @@ public class HangmanPanel {
     private JTextField gameKeyField = new JTextField();
     private JTextField guessField = new JTextField();
     private JButton[] letterButtons;
-    private final int FIRST_CHAR=65;
+    private final int FIRST_CHAR=97;
     private JButton newButton = new JButton("New");
     private GameState gameState = GameState.READY;
 

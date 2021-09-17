@@ -39,34 +39,22 @@ public class HangmanGame {
         "graphics"};
     private int healthCount = 5;
     private String wordToFind;
-    private String guess;
-    private char[] wordFound;
+    private char[] wordFound = new char[15];
     private ArrayList<String> letters = new ArrayList<>();
 
     public HangmanGame() {
         wordToFind = generateKey();
-    }
-
-    public void enter(String c) {
-        if (!letters.contains(c)) {
-            
-            if (wordToFind.contains(c)) {
-                int index = wordToFind.indexOf(c);
-
-                while (index >= 0) {
-                    wordFound[index] = c.charAt(0);
-                    index = wordToFind.indexOf(c, index + 1);
-                }
-            } else {
-                healthCount--;
-            }
-
-            letters.add(c);
+        for (int i = 0; i < wordToFind.length(); i++) {
+            wordFound[i] = wordToFind.charAt(i);
         }
     }
 
     public int getHealthCount() {
         return healthCount;
+    }
+
+    public void setHealthCount(int health) {
+        this.healthCount = health;
     }
 
     private String generateKey() {

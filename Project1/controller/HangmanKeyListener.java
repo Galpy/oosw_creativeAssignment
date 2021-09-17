@@ -30,7 +30,7 @@ public class HangmanKeyListener implements ActionListener{
             String guessField = "";
             panel.getGameKeyField().setText(key);
             for (int i = 0; i < hangman.getKey().length(); i++) {
-                guessField += ". ";
+                guessField += ".";
 
             }
             panel.getGuessField().setText(guessField);
@@ -49,11 +49,36 @@ public class HangmanKeyListener implements ActionListener{
             HangmanGame hangman = panel.getHangman();
             String n = button.getText();
             String key = hangman.getKey();
-                
-            
-            
-           // hangman.setGuess(clicks, n.charAt(0) - '0');
+            String guessString = guessField.getText();
+            String newGuess = "";
+            boolean correctGuess = true;
+            char[] keyLetters = hangman.getWordFound();
+            for (int i = 0; i < key.length(); i++) {
+                System.out.println(key.length());
+                if (keyLetters[i] == n.charAt(0)) {
+                    newGuess += n.charAt(0);
+                } else if (guessString.charAt(i) != '.') {
+                    newGuess += guessString.charAt(i);
+                } else {
+                    newGuess += ".";
+                }
+            }
+            System.out.println(newGuess);
+            panel.getGuessField().setText(newGuess);
             clicks++;
+            if (!key.contains(n)){
+                int health = hangman.getHealthCount();
+                    health--;
+                    hangman.setHealthCount(health);
+                    panel.getCanvas().setHealthCount(health);
+                    panel.getCanvas().repaint();
+                }
+                if (hangman.getHealthCount() == 0 ) {
+                    panel.setGameState(HangmanPanel.GameState.GAMEOVER);
+                    for (var b: panel.getLetterButtons()) {
+                        b.setEnabled(false);
+                }
+            
 
             if (clicks == 26) {
                 int health = hangman.getHealthCount();
@@ -62,6 +87,7 @@ public class HangmanKeyListener implements ActionListener{
                     for (var b: panel.getLetterButtons()) {
                         b.setEnabled(false);
                     }
+                }
                 } else {
                     // enable all letter buttons
                     for (var b: panel.getLetterButtons()) {
