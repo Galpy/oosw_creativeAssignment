@@ -111,7 +111,7 @@ public class BaseballGamePanel {
     }
 
     public void setGameState(GameState state) {
-        this.gameState = gameState;
+        this.gameState = state;
     }
 
     public BaseballGame getBaseball() {
