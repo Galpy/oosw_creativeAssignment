@@ -36,7 +36,7 @@ public class GuessingGameCanvas extends JPanel{
             g2.setFont(currentFont);
             g2.drawString("Press <New> to Start", 70, 150);
         } else {
-
+ 
             if (state == GuessingGamePanel.GameState.GAMEOVER) {
                 g2.setColor(Color.red);
                 Font currentFont = new Font("Courier New", Font.BOLD, 30);

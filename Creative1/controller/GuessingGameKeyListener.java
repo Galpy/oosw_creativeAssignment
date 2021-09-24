@@ -36,7 +36,7 @@ public class GuessingGameKeyListener implements ActionListener{
             // enable letter buttons
             for (var b: panel.getLetterButtons()) {
                 b.setEnabled(true);
-            }
+            } 
             panel.getCanvas().repaint(); 
         } else if (button == panel.getEnterButton()) {
             panel.setGameState(GuessingGamePanel.GameState.DRAW);

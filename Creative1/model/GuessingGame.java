@@ -13,7 +13,7 @@ public class GuessingGame {
         numberToFind[i] = generateNum();
         }
     }
-
+ 
     public int getScore() {
         return score;
     }

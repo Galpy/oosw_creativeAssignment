@@ -32,7 +32,7 @@ public class GuessingGamePanel {
     public GuessingGamePanel(JFrame window) {
         this.window = window;
     }
-
+ 
     public void init() {
         Container cp = window.getContentPane();
         
